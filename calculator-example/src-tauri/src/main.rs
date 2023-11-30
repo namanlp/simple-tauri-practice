@@ -3,17 +3,17 @@
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
-fn calculate_result(expression1 : String, expression2 : String, operator: char) -> String {
+fn calculate_result(expression1 : String, expression2 : String, operator: char) -> f64 {
 
     let num1 : f64 = expression1.parse().unwrap();
     let num2 : f64 = expression2.parse().unwrap();
 
     let result = match operator {
-        '+' => format!("{}", num1+num2),
-        '-' => format!("{}", num1-num2),
-        '*' => format!("{}", num1*num2),
-        '/' => format!("{}", num1/num2),
-        _ => "Sorry, incorrect expression".to_string()
+        '+' => num1+num2,
+        '-' => num1-num2,
+        '*' => num1*num2,
+        '/' => num1/num2,
+        _ => 0.0
     };
 
     return result;

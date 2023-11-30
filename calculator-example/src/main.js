@@ -7,7 +7,7 @@ let operator = "";
 
 let has_decimal = false;
 
-let previousExpression = "";
+let previousExpression = "0";
 let expression = "0";
 
 // Function to update display
@@ -36,10 +36,34 @@ function appendToExpression(num){
 
 function useOperator(op){
     operator = op;
-    previousExpression = expression;
-    expression = "0";
-    has_decimal = false;
+    if (previousExpression === "0"){
+        previousExpression = expression;
+        expression = "0";
+        has_decimal = false;
+    }
     updateDisplay();
+}
+
+// Function to Calculate Result
+
+async function calculate(){
+
+    // Works only if there is operator
+    if (operator===""){return;}
+
+    result = (await invoke('calculate_result', { expression1: previousExpression, expression2:expression, operator: operator })).toFixed(5);
+
+    // Show result rounded to at max 5 decimal digits
+    document.getElementById("display").textContent = result;
+
+    // Set previous expression to result
+    previousExpression = result;
+
+    // Reset the data
+    result = 0;
+    operator = "";
+    has_decimal = false;
+    expression = "0";
 }
 
 function addDecimal(){
