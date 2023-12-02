@@ -39,7 +39,8 @@
         "resizable": true,
         "title": "calculator-example",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "transparent": true
       }
     ]
   }
