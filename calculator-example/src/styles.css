@@ -1,3 +1,14 @@
+
+html{
+  opacity: 0.75;
+  transition: all 0.5s ease-in-out;
+  -webkit-backdrop-filter : invert(10%);
+}
+
+html:hover{
+  opacity: 0.95;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -5,15 +16,34 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background: linear-gradient(135deg, black 80%, purple, magenta);
 }
 
 #app {
   text-align: center;
 }
 
-input {
+#display {
   width: 200px;
+  padding: 0.6rem;
+  align-items: center;
   margin-bottom: 10px;
+  border-radius: 1rem;
+  -webkit-backdrop-filter: invert(80%);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#display, button{
+  transition: all 0.5s ease-in-out;
+}
+
+button{
+  border-radius: 1rem;
+  box-shadow: none;
+}
+
+#display:hover , button:hover{
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .buttons {
