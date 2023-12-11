@@ -27,9 +27,15 @@ function clearExpression(){
 }
 
 function appendToExpression(num){
+
+    if ((expression ==="0" || expression==="") && num==='0'){
+        return;
+    }
+
     if (expression === "0"){
         expression = "";
     }
+
     expression+=num;
     updateDisplay();
 }
