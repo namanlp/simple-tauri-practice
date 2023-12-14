@@ -19,7 +19,5 @@ serde_json = "1.0"
 devtools = "0.2"
 
 [features]
-# this feature is used for production builds or when `devPath` points to the filesystem
-# DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
 
