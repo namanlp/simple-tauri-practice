@@ -57,6 +57,7 @@ async function calculate(){
     // Works only if there is operator
     if (operator===""){return;}
 
+    // Format to 5 decimals
     result = (await invoke('calculate_result', { expression1: previousExpression, expression2:expression, operator: operator })).toFixed(5);
 
     // Show result rounded to at max 5 decimal digits
