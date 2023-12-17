@@ -28,6 +28,7 @@ function clearExpression(){
 
 function appendToExpression(num){
 
+    // Prevent 0000 case
     if ((expression ==="0" || expression==="") && num==='0'){
         return;
     }
