@@ -21,7 +21,7 @@ function clearExpression(){
     result = 0;
     operator = "";
     has_decimal = false;
-    previousExpression = "";
+    previousExpression = "0";
     expression = "0";
     updateDisplay();
 }
