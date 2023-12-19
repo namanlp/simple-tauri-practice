@@ -8,8 +8,10 @@ It uses Tauri and Rust.
 
 ## Running
 
-You can run this app by using command
+To run this application, first clone this repository into your pc, and then run this app by using command
 
 ```
 cargo tauri dev
 ```
+
+command.
